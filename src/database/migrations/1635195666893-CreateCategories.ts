@@ -11,6 +11,7 @@ export class CreateCategories1635195666893 implements MigrationInterface {
                         {
                             name:"id",
                             type:"uuid",
+                            isPrimary:true
                         },
                         {
                             name:"name",
@@ -32,6 +33,7 @@ export class CreateCategories1635195666893 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("categories")
     }
 
 }
